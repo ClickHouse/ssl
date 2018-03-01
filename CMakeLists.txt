@@ -314,14 +314,18 @@ add_definitions(-DSIZEOF_TIME_T=${SIZEOF_TIME_T})
 
 add_subdirectory(crypto)
 add_subdirectory(ssl)
+if (0)
 add_subdirectory(apps)
+endif()
 add_subdirectory(tls)
 add_subdirectory(include)
+if (0)
 if(NOT MSVC)
 	add_subdirectory(man)
 endif()
 if(NOT MSVC OR ENABLE_VSTEST)
 	add_subdirectory(tests)
+endif()
 endif()
 
 if(NOT MSVC)
@@ -341,6 +345,7 @@ if(NOT MSVC)
 		DESTINATION ${CMAKE_INSTALL_LIBDIR})
 endif()
 
+if (0)
 configure_file(
 	"${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
 	"${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
@@ -348,3 +353,4 @@ configure_file(
 
 add_custom_target(uninstall
 	COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
+endif()
