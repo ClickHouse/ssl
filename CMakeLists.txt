@@ -326,7 +326,6 @@ endif()
 if(NOT MSVC OR ENABLE_VSTEST)
 	add_subdirectory(tests)
 endif()
-endif()
 
 if(NOT MSVC)
 	# Create pkgconfig files.
@@ -345,7 +344,6 @@ if(NOT MSVC)
 		DESTINATION ${CMAKE_INSTALL_LIBDIR})
 endif()
 
-if (0)
 configure_file(
 	"${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
 	"${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
