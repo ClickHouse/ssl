@@ -314,43 +314,5 @@ add_definitions(-DSIZEOF_TIME_T=${SIZEOF_TIME_T})
 
 add_subdirectory(crypto)
 add_subdirectory(ssl)
-if (0)
-add_subdirectory(apps)
-endif()
 add_subdirectory(tls)
 add_subdirectory(include)
-if (0)
-if(NOT MSVC)
-	add_subdirectory(man)
-endif()
-if(NOT MSVC OR ENABLE_VSTEST)
-	add_subdirectory(tests)
-endif()
-endif()
-
-if(NOT MSVC)
-	# Create pkgconfig files.
-	set(prefix      ${CMAKE_INSTALL_PREFIX})
-	set(exec_prefix \${prefix})
-	set(libdir      \${exec_prefix}/${CMAKE_INSTALL_LIBDIR})
-	set(includedir  \${prefix}/include)
-	file(STRINGS    "VERSION" VERSION LIMIT_COUNT 1)
-	file(GLOB       OPENSSL_PKGCONFIGS "*.pc.in")
-	foreach(file ${OPENSSL_PKGCONFIGS})
-		get_filename_component(filename ${file} NAME)
-		string(REPLACE ".in" "" new_file "${filename}")
-		configure_file(${filename} pkgconfig/${new_file} @ONLY)
-	endforeach()
-	install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/pkgconfig
-		DESTINATION ${CMAKE_INSTALL_LIBDIR})
-endif()
-
-if (0)
-configure_file(
-	"${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
-	"${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
-	IMMEDIATE @ONLY)
-
-add_custom_target(uninstall
-	COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
-endif()
