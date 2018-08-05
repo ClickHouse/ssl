@@ -162,10 +162,12 @@ if(HAVE_INET_PTON)
 	add_definitions(-DHAVE_INET_PTON)
 endif()
 
-check_function_exists(reallocarray HAVE_REALLOCARRAY)
-if(HAVE_REALLOCARRAY)
-	add_definitions(-DHAVE_REALLOCARRAY)
-endif()
+# Don't want dependency on newer GLIBC
+#
+#check_function_exists(reallocarray HAVE_REALLOCARRAY)
+#if(HAVE_REALLOCARRAY)
+#	add_definitions(-DHAVE_REALLOCARRAY)
+#endif()
 
 check_function_exists(strcasecmp HAVE_STRCASECMP)
 if(HAVE_STRCASECMP)
@@ -217,20 +219,24 @@ if(HAVE_ARC4RANDOM_UNIFORM)
 	add_definitions(-DHAVE_ARC4RANDOM_UNIFORM)
 endif()
 
-check_function_exists(explicit_bzero HAVE_EXPLICIT_BZERO)
-if(HAVE_EXPLICIT_BZERO)
-	add_definitions(-DHAVE_EXPLICIT_BZERO)
-endif()
+# Don't want dependency on newer GLIBC
+#
+#check_function_exists(explicit_bzero HAVE_EXPLICIT_BZERO)
+#if(HAVE_EXPLICIT_BZERO)
+#	add_definitions(-DHAVE_EXPLICIT_BZERO)
+#endif()
 
 check_function_exists(getauxval HAVE_GETAUXVAL)
 if(HAVE_GETAUXVAL)
 	add_definitions(-DHAVE_GETAUXVAL)
 endif()
 
-check_function_exists(getentropy HAVE_GETENTROPY)
-if(HAVE_GETENTROPY)
-	add_definitions(-DHAVE_GETENTROPY)
-endif()
+# Don't want dependency on newer GLIBC
+#
+#check_function_exists(getentropy HAVE_GETENTROPY)
+#if(HAVE_GETENTROPY)
+#	add_definitions(-DHAVE_GETENTROPY)
+#endif()
 
 check_function_exists(getpagesize HAVE_GETPAGESIZE)
 if(HAVE_GETPAGESIZE)
