@@ -225,13 +225,11 @@ endif()
 #if(HAVE_EXPLICIT_BZERO)
 #	add_definitions(-DHAVE_EXPLICIT_BZERO)
 #endif()
-
-check_function_exists(getauxval HAVE_GETAUXVAL)
-if(HAVE_GETAUXVAL)
-	add_definitions(-DHAVE_GETAUXVAL)
-endif()
-
-# Don't want dependency on newer GLIBC
+#
+#check_function_exists(getauxval HAVE_GETAUXVAL)
+#if(HAVE_GETAUXVAL)
+#	add_definitions(-DHAVE_GETAUXVAL)
+#endif()
 #
 #check_function_exists(getentropy HAVE_GETENTROPY)
 #if(HAVE_GETENTROPY)
