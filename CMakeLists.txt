@@ -219,12 +219,13 @@ if(HAVE_ARC4RANDOM_UNIFORM)
 	add_definitions(-DHAVE_ARC4RANDOM_UNIFORM)
 endif()
 
-# Don't want dependency on newer GLIBC
-#
 #check_function_exists(explicit_bzero HAVE_EXPLICIT_BZERO)
 #if(HAVE_EXPLICIT_BZERO)
-#	add_definitions(-DHAVE_EXPLICIT_BZERO)
+# We have our own implementation
+	add_definitions(-DHAVE_EXPLICIT_BZERO)
 #endif()
+
+# Don't want dependency on newer GLIBC
 #
 #check_function_exists(getauxval HAVE_GETAUXVAL)
 #if(HAVE_GETAUXVAL)
