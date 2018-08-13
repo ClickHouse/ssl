@@ -219,11 +219,11 @@ if(HAVE_ARC4RANDOM_UNIFORM)
 	add_definitions(-DHAVE_ARC4RANDOM_UNIFORM)
 endif()
 
-#check_function_exists(explicit_bzero HAVE_EXPLICIT_BZERO)
-#if(HAVE_EXPLICIT_BZERO)
 # We have our own implementation
+check_function_exists(explicit_bzero HAVE_EXPLICIT_BZERO)
+if(HAVE_EXPLICIT_BZERO)
 	add_definitions(-DHAVE_EXPLICIT_BZERO)
-#endif()
+endif()
 
 # Don't want dependency on newer GLIBC
 #
