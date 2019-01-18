@@ -274,10 +274,6 @@ if(ENABLE_ASM)
 	endif()
 endif()
 
-if(NOT (CMAKE_SYSTEM_NAME MATCHES "(Darwin|CYGWIN)"))
-	set(BUILD_SHARED true)
-endif()
-
 # USE_SHARED builds applications (e.g. openssl) using shared LibreSSL.
 # By default, applications use LibreSSL static library to avoid dependencies.
 # USE_SHARED isn't set by default; use -DUSE_SHARED=ON with CMake to enable.
