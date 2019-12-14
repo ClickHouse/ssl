@@ -148,8 +148,8 @@ aead_chacha20_poly1305_seal(const EVP_AEAD_CTX *ctx, unsigned char *out,
 		return 0;
 	}
 
-	ctr = (uint64_t)(nonce[0] | nonce[1] << 8 |
-	    nonce[2] << 16 | nonce[3] << 24) << 32;
+	ctr = (uint64_t)((uint64_t)nonce[0] | (uint64_t)nonce[1] << 8 |
+	    (uint64_t)nonce[2] << 16 | (uint64_t)nonce[3] << 24) << 32;
 	iv = nonce + CHACHA20_CONSTANT_LEN;
 
 	memset(poly1305_key, 0, sizeof(poly1305_key));
